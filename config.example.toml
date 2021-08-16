@@ -1,0 +1,35 @@
+# Any of these options can be omitted, and the default will be used instead.
+
+# The address/port to bind the web server to.
+address = "127.0.0.1:8080"
+# The base URL of this server. Do not include a trailing slash!
+site-url = "https://paste.absolucy.moe"
+# Whether the secret key is required to post or not.
+public = false
+# An optional directory where static files will be served from. Static files take priority over pastes!
+static-dir = "static"
+# Maximum size of an upload in bytes. Default: 8 MB
+paste-limit = 8388608
+# Maximum size of the HTML cache in bytes. Default: 64 MB
+cache-limit = 67108864
+# The path where the SQLite database will be created.
+db-path = "sweetpaste.db"
+# A password, used for uploading on non-public instances, and deleting *any* paste.
+password = "hunter2"
+# A 32-byte (64 character) key used to encrypt paste IDs. Keep this a secret!
+# This NEEDS to be changed!
+id-key = "0000000000000000000000000000000000000000000000000000000000000000"
+# A list of "trusted" IPs, which will be trusted to provide valid X-Forwarded-For/X-Real-IP headers.
+trusted-ips = ["127.0.0.1", "::1"]
+
+[syntax-highlighting]
+# The syntax highlighting theme to use.
+# By default, the `base16-ocean.dark`, `base16-eighties.dark`,
+# `base16-mocha.dark`, `base16-ocean.light`, `InspiredGitHub`,
+# `Solarized (dark)` and `Solarized (light)` themes are available.
+theme = "base16-eighties.dark"
+# The folder to load .tmTheme files from.
+themes-folder = "themes"
+# The folder to load .tmLanguage files from.
+# Expected to include newlines!
+syntax-folder = "syntax"

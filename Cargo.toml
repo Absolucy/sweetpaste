@@ -1,0 +1,30 @@
+[package]
+name = "sweetpaste"
+version = "0.1.0"
+edition = "2018"
+license = "MPL-2.0"
+authors = ["Lucy <lucy@absolucy.moe>"]
+
+[dependencies]
+chacha20 = "0.7.2"
+clru = "0.5.0"
+color-eyre = "0.5.11"
+fnv = "1.0.7"
+futures = "0.3.16"
+handlebars = "4.1.2"
+hex = { version = "0.4.3", features = ["serde"] }
+mnemonic = "1.0.1"
+rand = "0.8.4"
+serde = { version = "1.0.128", features = ["derive"] }
+serde_json = "1.0.66"
+sqlx = { version = "0.5.7", features = ["sqlite", "runtime-tokio-native-tls"] }
+syntect = { version = "4.6.0", features = ["assets", "dump-load", "html"] }
+thiserror = "1.0.26"
+tokio = { version = "1.10.0", features = ["rt", "rt-multi-thread", "io-util", "net", "macros", "sync", "fs"] }
+toml = "0.5.8"
+warp = { version = "0.3.1", default-features = false, features = ["multipart"] }
+
+[profile.release]
+lto = true
+opt-level = "s"
+codegen-units = 1

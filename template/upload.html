@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="{{ name }}">
+	<meta property="og:site_name" content="sweetpaste">
+	<title>sweetpaste</title>
+	<style>
+		body {
+			background-color: #2f2f2f;
+			color: #fff;
+		}
+
+		.title {
+			font-size: 1.5em;
+		}
+
+		.code {
+			font-family: "Fira Code", "JetBrains Mono", "Source Code Pro", "Monaco", monospace;
+			background-color: #4f4f4f;
+			color: #fff;
+			width: 95vw;
+			height: 90vh;
+			tab-size: 4rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<span class="title">sweetpaste</span>
+	</div>
+	<div>
+		<form action="/" method="POST" enctype="application/x-www-form-urlencoded">
+			<input type="text" id="name" name="name" placeholder="Name">
+			<select name="syntax" id="syntax">
+				{{#each languages}}
+				<option value="{{ this }}">{{ this }}</option>
+				{{/each}}
+			</select>
+			{{#unless public}}
+			<input type="password" id="password" name="password" placeholder="Password">
+			{{/unless}}
+			<input type="submit" value="Submit"><br>
+			<textarea id="content" name="content" class="code"></textarea>
+		</form>
+	</div>
+</body>
+
+</html>

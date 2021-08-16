@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="robots" content="noindex">
+	<meta property="og:title" content="{{ name }}">
+	<meta property="og:site_name" content="sweetpaste">
+	<title>sweetpaste - {{ name }}</title>
+	<style>
+		body {
+			background-color: #2f2f2f;
+			color: #fff;
+		}
+
+		.title {
+			font-size: 1.5em;
+		}
+
+		.language {
+			font-size: 0.8em;
+		}
+
+		.code {
+			font-family: "Fira Code", "JetBrains Mono", "Source Code Pro", "Monaco", monospace;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<div>
+			<span class="title">{{ name }}</span>
+			<span class="language">{{ language }}</span>
+		</div>
+		<div class="code">
+			{{{content}}}
+		</div>
+	</main>
+</body>
+
+</html>
