@@ -1,9 +1,12 @@
 [package]
 name = "sweetpaste"
+description = "A sweet & simple pastebin, with syntax highlighting and no client-side code."
 version = "0.1.0"
 edition = "2018"
 license = "MPL-2.0"
 authors = ["Lucy <lucy@absolucy.moe>"]
+repository = "https://github.com/Absolucy/sweetpaste"
+keywords = ["pastebin", "syntax-highlighting"]
 
 [dependencies]
 chacha20 = "0.7.2"
