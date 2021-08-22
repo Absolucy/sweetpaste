@@ -1,0 +1,67 @@
+{
+  "db": "SQLite",
+  "5d6f2391c27558d1f6de37769192ea763b92d57c9b09af42c4dd4da739ac8e50": {
+    "query": "\n\t\tINSERT INTO pastes\n\t\t\t(name, ip, syntax, content)\n\t\tVALUES\n\t\t\t($1, $2, $3, $4)\n\t\tRETURNING\n\t\t\tid as \"id: i64\"\n\t\t",
+    "describe": {
+      "columns": [
+        {
+          "name": "id: i64",
+          "ordinal": 0,
+          "type_info": "Null"
+        }
+      ],
+      "parameters": {
+        "Right": 4
+      },
+      "nullable": [
+        false
+      ]
+    }
+  },
+  "d0ec35435e397434f18a1ab095324cc41bfdb39c4ded142b2f2af8eb80582efb": {
+    "query": "\n\t\tSELECT\n\t\t\tname, syntax, content, posted as \"posted: i64\"\n\t\tFROM\n\t\t\tpastes\n\t\tWHERE\n\t\t\tid = $1\n\t\t",
+    "describe": {
+      "columns": [
+        {
+          "name": "name",
+          "ordinal": 0,
+          "type_info": "Text"
+        },
+        {
+          "name": "syntax",
+          "ordinal": 1,
+          "type_info": "Text"
+        },
+        {
+          "name": "content",
+          "ordinal": 2,
+          "type_info": "Text"
+        },
+        {
+          "name": "posted: i64",
+          "ordinal": 3,
+          "type_info": "Datetime"
+        }
+      ],
+      "parameters": {
+        "Right": 1
+      },
+      "nullable": [
+        true,
+        true,
+        false,
+        false
+      ]
+    }
+  },
+  "dd020480f8c820b98307a41d3f7c48f63471b5ff26b9539767b041e0c904cd93": {
+    "query": "\n\t\tDELETE FROM\n\t\t\tpastes\n\t\tWHERE\n\t\t\tid = $1 AND\n\t\t\t(ip = $2 OR $3 = 1)\n\t",
+    "describe": {
+      "columns": [],
+      "parameters": {
+        "Right": 3
+      },
+      "nullable": []
+    }
+  }
+}
