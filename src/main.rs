@@ -100,12 +100,14 @@ async fn main() -> Result<()> {
 			// Get the name of every syntax we have loaded.
 			// We do this here for efficiency - we won't need to allocate
 			// this list every time we serve a paste.
-			let languages = state
+			let mut languages = state
 				.syntax_set
 				.syntaxes()
 				.iter()
 				.map(|syntax| syntax.name.clone())
 				.collect::<Vec<String>>();
+			// Sort the syntax list.
+			languages.sort();
 			// Pre-render the page, it'll never change anyways
 			let rendered = state
 				.handlebars
