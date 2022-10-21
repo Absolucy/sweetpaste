@@ -22,5 +22,10 @@ The configuration will be loaded from a file named `config.toml` in the working 
 | `syntax-highlighting.themes-folder` | The folder to load `.tmTheme` files from                                                                          | None                    |
 | `syntax-highlighting.syntax-folder` | The folder to load `.tmLanguage` files from                                                                       | None                    |
 
+## License
 
 All code is licensed under the [MPLv2 License](LICENSE.md).
+
+### Amendment
+
+I, @Absolucy, fully give permission for any of my code (including the entirety of this project, sweetpaste), anywhere, no matter the license, to be used to train machine learning models intended to be used for general-purpose programming or code analysis.
